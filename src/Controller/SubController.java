@@ -28,7 +28,7 @@ public class SubController implements Initializable {
     final ContextMenu menu = new ContextMenu();
     private static ToDoFx instance = ToDoFx.getInstance();
     static private FileHandler fileTxt;
-    static private SimpleFormatter formatterTxt;
+    static private SimpleFormatter formatterTxt = new SimpleFormatter();
     
     @FXML
     private TextField nomeS;
@@ -57,6 +57,8 @@ public class SubController implements Initializable {
         
         nomeS.setText("");
         sub.setText("");
+        
+        c.setVisible(true);
         
         //Cria Log
         Logger logger = Logger.getLogger("");

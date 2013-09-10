@@ -51,6 +51,7 @@ public class Usuario {
     public void rmTarefa (Tarefa t) {
         lista.remove(t);
     }
+    
     public Tarefa encontraTarefa(String nome){
         for(Tarefa t : lista){
             if(t.getNome().equals(nome))

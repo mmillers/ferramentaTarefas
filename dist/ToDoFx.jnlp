@@ -11,7 +11,7 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="ToDoFx.jar" size="59191" download="eager" />
+    <jar href="ToDoFx.jar" size="57459" download="eager" />
     <jar href="lib/commons-betwixt-0.8.jar" size="242227" download="eager" />
     <jar href="lib/commons-digester3-3.2-with-deps.jar" size="734212" download="eager" />
     <jar href="lib/commons-digester3-3.2.jar" size="241614" download="eager" />

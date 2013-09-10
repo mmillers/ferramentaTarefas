@@ -98,9 +98,7 @@ public class TaskController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         cad.setVisible(false);
-        
-        previsao.setPromptText("MM/dd/yyyy");
-
+        previsao.setPromptText("dd/MM/yyyy");
         ObservableList<String> options =
                 FXCollections.observableArrayList(
                 "Alta",

@@ -10,19 +10,34 @@
 
 <AnchorPane id="AnchorPane" prefHeight="686.0" prefWidth="721.0" xmlns:fx="http://javafx.com/fxml" fx:controller="Controller.GerenciarController">
   <children>
-    <Label layoutX="107.0" layoutY="22.0" text="TAREFAS" />
-    <Label layoutX="305.0" layoutY="22.0" text="SUB TAREFAS" />
-    <ListView fx:id="listaT" layoutX="31.0" layoutY="45.0" onMouseClicked="#OnMouseClicked" prefHeight="267.0" prefWidth="200.0" />
-    <ListView fx:id="listaS" layoutX="241.0" layoutY="45.0" onMouseClicked="#OnSubMouseClicked" prefHeight="267.0" prefWidth="200.0" />
-    <PieChart id="PieChart" fx:id="grafico" layoutX="146.0" layoutY="354.0" prefHeight="324.0" prefWidth="491.0" />
-    <Button fx:id="exportar" layoutX="31.0" layoutY="333.0" mnemonicParsing="false" onAction="#exportarclick" prefWidth="73.0" text="Imagem" />
-    <TextArea fx:id="subD" layoutX="483.0" layoutY="190.0" prefHeight="122.0" prefWidth="200.0" wrapText="true" />
-    <TextArea fx:id="tarefaD" layoutX="483.0" layoutY="45.0" prefHeight="122.0" prefWidth="200.0" wrapText="true" />
-    <Button fx:id="gerar" layoutX="127.0" layoutY="333.0" mnemonicParsing="false" onAction="#GerarGrafico" prefWidth="73.0" text="Gráfico" />
-    <Label fx:id="erro"  layoutX="241.0" layoutY="335.0" prefWidth="332.0" text="Impossível gerar grágfico, dados insuficientes..." textFill="#660049" wrapText="true">
+    <Label layoutX="109.0" layoutY="343.0" text="TAREFAS" />
+    <Label layoutX="307.0" layoutY="343.0" text="SUB TAREFAS" />
+    <ListView fx:id="listaT" layoutX="33.0" layoutY="366.0" onMouseClicked="#OnMouseClicked" prefHeight="267.0" prefWidth="200.0" />
+    <ListView fx:id="listaS" layoutX="243.0" layoutY="366.0" onMouseClicked="#OnSubMouseClicked" prefHeight="267.0" prefWidth="200.0" />
+    <PieChart id="PieChart" fx:id="grafico" layoutX="104.0" layoutY="14.0" prefHeight="282.0" prefWidth="491.0" />
+    <Button fx:id="exportar" layoutX="33.0" layoutY="296.0" mnemonicParsing="false" onAction="#exportarclick" prefWidth="48.0" text="PIC" />
+    <Button fx:id="gerar" layoutX="108.0" layoutY="296.0" mnemonicParsing="false" onAction="#GerarGrafico" prefWidth="51.0" text="GRAF" />
+    <Label fx:id="erro" layoutX="241.0" layoutY="353.0" prefWidth="332.0" textFill="#660049" wrapText="true">
       <font>
         <Font name="SimHei" size="12.0" />
       </font>
     </Label>
+    <Button fx:id="maist" layoutX="33.0" layoutY="642.0" minWidth="25.0" mnemonicParsing="false" onAction="#adicionarTarefaClicked" prefWidth="32.0" text="+" />
+    <Button fx:id="menost" layoutX="70.0" layoutY="642.0" mnemonicParsing="false" onAction="#removerTarefaClicked" prefWidth="32.0" text="-" />
+    <Button fx:id="editt" layoutX="110.0" layoutY="642.0" mnemonicParsing="false" onAction="#editarTarefaClicked" prefWidth="32.0" text="#" />
+    <Button fx:id="fimt" layoutX="146.0" layoutY="642.0" mnemonicParsing="false" onAction="#finalizarTarefaClicked" prefWidth="40.0" text="OK" />
+    <Button fx:id="maiss" layoutX="249.0" layoutY="642.0" minWidth="25.0" mnemonicParsing="false" onAction="#adicionarSubClicked" prefWidth="32.0" text="+" />
+    <Button fx:id="menoss" layoutX="286.0" layoutY="642.0" mnemonicParsing="false" onAction="#removerSubClicked" prefWidth="32.0" text="-" />
+    <Button fx:id="edits" layoutX="326.0" layoutY="642.0" mnemonicParsing="false" onAction="#editarSubClicked" prefWidth="32.0" text="#" />
+    <Button fx:id="fims" layoutX="362.0" layoutY="642.0" mnemonicParsing="false" onAction="#finalizarSubClicked" prefWidth="40.0" text="OK" />
+    <Button fx:id="attT" layoutX="466.0" layoutY="507.0" mnemonicParsing="false" onAction="#atualizarTarefaClicked" prefWidth="48.0" text="ATT" />
+    <Button fx:id="attS" layoutX="466.0" layoutY="606.0" mnemonicParsing="false" onAction="#atualizarSubClicked" prefWidth="48.0" text="ATT" />
+    <TextArea fx:id="tarefaD" layoutX="475.0" layoutY="366.0" prefHeight="21.0" prefWidth="200.0" promptText="DESCRIÇÃO" wrapText="true" />
+    <TextArea fx:id="tarefaPre" layoutX="475.0" layoutY="395.0" prefHeight="21.0" prefWidth="200.0" promptText="PREVISÃO" wrapText="true" />
+    <TextArea fx:id="tarefaP" layoutX="475.0" layoutY="424.0" prefHeight="21.0" prefWidth="200.0" promptText="PRIORIDADE" wrapText="true" />
+    <TextArea fx:id="tarefaS" layoutX="475.0" layoutY="452.0" prefHeight="21.0" prefWidth="200.0" promptText="SITUAÇÃO" wrapText="true" />
+    <TextArea fx:id="tarefaC" layoutX="475.0" layoutY="479.0" prefHeight="21.0" prefWidth="200.0" promptText="CONCLUSÃO" wrapText="true" />
+    <TextArea fx:id="subS" layoutX="475.0" layoutY="578.0" prefHeight="21.0" prefWidth="200.0" promptText="SITUAÇÃO" wrapText="true" />
+    <TextArea fx:id="subO" layoutX="475.0" layoutY="549.0" prefHeight="21.0" prefWidth="200.0" promptText="OBSERVAÇÃO" wrapText="true" />
   </children>
 </AnchorPane>

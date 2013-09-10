@@ -49,6 +49,10 @@ public class Sub {
 
 
     public String ChamaObs() {
-        return "Observação: " + obs + "\n" + "Status: " + status;
+        return obs ;
+    }
+    
+    public String ChamaStatus() {
+        return status;
     }
 }

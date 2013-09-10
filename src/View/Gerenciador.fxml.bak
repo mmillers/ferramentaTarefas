@@ -15,10 +15,29 @@
     <ListView fx:id="listaT" layoutX="31.0" layoutY="45.0" onMouseClicked="#OnMouseClicked" prefHeight="267.0" prefWidth="200.0" />
     <ListView fx:id="listaS" layoutX="241.0" layoutY="45.0" onMouseClicked="#OnSubMouseClicked" prefHeight="267.0" prefWidth="200.0" />
     <PieChart id="PieChart" fx:id="grafico" layoutX="146.0" layoutY="354.0" prefHeight="324.0" prefWidth="491.0" />
-    <Button fx:id="exportar" layoutX="31.0" layoutY="333.0" mnemonicParsing="false" onAction="#exportarclick" prefWidth="73.0" text="Imagem" />
-    <TextArea fx:id="subD" layoutX="483.0" layoutY="190.0" prefHeight="122.0" prefWidth="200.0" wrapText="true" />
-    <TextArea fx:id="tarefaD" layoutX="483.0" layoutY="45.0" prefHeight="122.0" prefWidth="200.0" wrapText="true" />
-    <Button fx:id="gerar" layoutX="127.0" layoutY="333.0" mnemonicParsing="false" onAction="#GerarGrafico" prefWidth="73.0" text="Gráfico" />
-    <Label layoutX="241.0" layoutY="335.0" prefWidth="224.0" text="Impossível gerar grágfico, dados insuficientes." />
+    <Button fx:id="exportar" layoutX="47.0" layoutY="346.0" mnemonicParsing="false" onAction="#exportarclick" prefWidth="48.0" text="PIC" />
+    <Button fx:id="gerar" layoutX="104.0" layoutY="346.0" mnemonicParsing="false" onAction="#GerarGrafico" prefWidth="51.0" text="GRAF" />
+    <Label fx:id="erro" layoutX="241.0" layoutY="353.0" prefWidth="332.0" text="" textFill="#660049" wrapText="true">
+      <font>
+        <Font name="SimHei" size="12.0" />
+      </font>
+    </Label>
+    <Button fx:id="maist" layoutX="31.0" layoutY="321.0" minWidth="25.0" mnemonicParsing="false" onAction="#adicionarTarefaClicked" prefWidth="32.0" text="+" />
+    <Button fx:id="menost" layoutX="68.0" layoutY="321.0" mnemonicParsing="false" onAction="#removerTarefaClicked" prefWidth="32.0" text="-" />
+    <Button fx:id="editt" layoutX="108.0" layoutY="321.0" mnemonicParsing="false" onAction="#editarTarefaClicked" prefWidth="32.0" text="#" />
+    <Button fx:id="fimt" layoutX="144.0" layoutY="321.0" mnemonicParsing="false" prefWidth="40.0" text="OK" onAction="#finalizarTarefaClicked" />
+    <Button fx:id="maiss" layoutX="247.0" layoutY="321.0" minWidth="25.0" mnemonicParsing="false" prefWidth="32.0" text="+" onAction="#adicionarSubClicked"  />
+    <Button fx:id="menoss" layoutX="284.0" layoutY="321.0" mnemonicParsing="false" prefWidth="32.0" text="-" onAction="#removerSubClicked" />
+    <Button fx:id="edits" layoutX="324.0" layoutY="321.0" mnemonicParsing="false" prefWidth="32.0" text="#" onAction="#editarSubClicked" />
+    <Button fx:id="fims" layoutX="360.0" layoutY="321.0" mnemonicParsing="false" prefWidth="40.0" text="OK" onAction="#finalizarSubClicked" />
+    <Button layoutX="464.0" layoutY="186.0" mnemonicParsing="false" prefWidth="48.0" text="ATT" onAction="#atualizarTarefaClicked"  fx:id="attT" />
+    <Button layoutX="464.0" layoutY="285.0" mnemonicParsing="false" prefWidth="48.0" text="ATT" onAction="#atualizarSubClicked" fx:id="attS" />
+    <TextArea layoutX="473.0" layoutY="45.0" prefHeight="21.0" prefWidth="200.0" promptText="DESCRIÇÃO" wrapText="true" fx:id="tarefaD"  />
+    <TextArea layoutX="473.0" layoutY="74.0" prefHeight="21.0" prefWidth="200.0" promptText="PREVISÃO" wrapText="true" fx:id="tarefaPre" />
+    <TextArea layoutX="473.0" layoutY="103.0" prefHeight="21.0" prefWidth="200.0" promptText="PRIORIDADE" wrapText="true" fx:id="tarefaP" />
+    <TextArea layoutX="473.0" layoutY="131.0" prefHeight="21.0" prefWidth="200.0" promptText="SITUAÇÃO" wrapText="true" fx:id="tarefaS" />
+    <TextArea layoutX="473.0" layoutY="158.0" prefHeight="21.0" prefWidth="200.0" promptText="CONCLUSÃO" wrapText="true" fx:id="tarefaC" />
+    <TextArea layoutX="473.0" layoutY="257.0" prefHeight="21.0" prefWidth="200.0" promptText="SITUAÇÃO" wrapText="true" fx:id="subS" />
+    <TextArea layoutX="473.0" layoutY="228.0" prefHeight="21.0" prefWidth="200.0" promptText="OBSERVAÇÃO" wrapText="true" fx:id="subO" />
   </children>
 </AnchorPane>

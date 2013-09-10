@@ -1,2 +1,2 @@
-Set 09, 2013 8:26:52 PM java.util.logging.LogManager$RootLogger log
-INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:25:54 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Exportar Imagem* $$ -- __ --

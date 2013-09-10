@@ -1,0 +1,13 @@
+  <Usuario nome="asd" senha="asd">
+    <lista>
+      <Tarefa conclusao="10/09/2013" descricao="qazxc" nome="qscvb" previsao="12/08/2013" prioridade="Media" situacao="Finalizado">
+        <sub>
+          <sub name="efg" obs="ert" status="Finalizado"/>
+          <sub name="hhhhh" obs="jjjjj" status="Finalizado"/>
+        </sub>
+      </Tarefa>
+      <Tarefa conclusao="desconhecida" descricao="qqqq" nome="qqqqq" previsao="12/12/2013" prioridade="Media" situacao="aberto">
+        <sub/>
+      </Tarefa>
+    </lista>
+  </Usuario>

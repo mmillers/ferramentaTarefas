@@ -5,6 +5,9 @@ import Logger.FileHandlerForLogger;
 import View.ToDoFx;
 import Model.Sub;
 import Model.Tarefa;
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -27,15 +30,11 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.embed.swing.SwingFXUtils;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
-import javafx.scene.image.WritableImage;
 import javax.imageio.ImageIO;
 
 public class GerenciarController implements Initializable {
@@ -48,49 +47,75 @@ public class GerenciarController implements Initializable {
     @FXML
     private final TextArea tarefaD = new TextArea();
     @FXML
-    private final TextArea subD = new TextArea();
+    private final TextArea tarefaP = new TextArea();
+    @FXML
+    private final TextArea tarefaS = new TextArea();
+    @FXML
+    private final TextArea tarefaPre = new TextArea();
+    @FXML
+    private final TextArea tarefaC = new TextArea();
+    @FXML
+    private final TextArea subO = new TextArea();
+    @FXML
+    private final TextArea subS = new TextArea();
     @FXML
     private final ListView<Tarefa> listaT = new ListView();
     @FXML
     private final ListView<Sub> listaS = new ListView();
     @FXML
+    private Button attT;
+    @FXML
+    private Button attS;
+    @FXML
     private Button exportar;
     @FXML
     private Button gerar;
     @FXML
+    private Button maist;
+    @FXML
+    private Button menost;
+    @FXML
+    private Button editt;
+    @FXML
+    private Button fimt;
+    @FXML
+    private Button maiss;
+    @FXML
+    private Button menoss;
+    @FXML
+    private Button edits;
+    @FXML
+    private Button fims;
+    @FXML
     private PieChart grafico;
     @FXML
     private Label erro;
+    private ObservableList<Tarefa> obTarefas;
 
-//    private ObservableList<Tarefa> obTarefas = FXCollections.observableArrayList();
-//    private ObservableList<Sub> obSubs = FXCollections.observableArrayList();
     @FXML
-    public void exportarclick(ActionEvent e) throws IOException, ParseException {
-        WritableImage wim = new WritableImage(700, 700);
-        instance.stageTemp.getScene().snapshot(wim);
+    public void exportarclick(ActionEvent e) throws IOException, ParseException, AWTException {
+        BufferedImage img = null;
+        img = new Robot().createScreenCapture(new java.awt.Rectangle((int) instance.stageTemp.getX() + 100, // esquerda
+                (int) instance.stageTemp.getY()+ 40, (int) instance.stageTemp.getWidth() - 200 ,
+                (int) instance.stageTemp.getHeight()- 438));
         File file = new File("D:\\ImageGrafico.png");
-        ImageIO.write(SwingFXUtils.fromFXImage(wim, null), "png", file);
-//        WritableImage out = new WritableImage(300, 400);
-//        Scene scene = instance.stageTemp.getScene();
-//        
-//       WritableImage wim = new WritableImage((int) instance.stageTemp.getWidth(),
-//                (int) instance.stageTemp.getHeight());
-//        scene.snapshot(wim);
-//        PixelReader px = wim.getPixelReader();
-//        for(int y=300; y<instance.stageTemp.getHeight(); y++){
-//            for(int x=300; x<instance.stageTemp.getWidth(); x++){
-//                PixelWriter pw = out.getPixelWriter();
-////                pw.setArgb(x, y);
+        ImageIO.write(img, "png", file);
+        
+//        ImageIO.write(img, comboFormato.getValue().toString(), new File(arquivo + "." + comboFormato.getValue().toString()));
+        
+        
+//        ImageIO.write(SwingFXUtils.fromFXImage(wim, null), "png", file);
+//            if (!arquivo.isEmpty()) {
+//                try {
+//                    ImageIO.write(img, comboFormato.getValue().toString(), new File(arquivo + "." + comboFormato.getValue().toString()));
+//                } catch (IOException ex) {
+//                }
 //            }
-//        }
-//        File f = new FileOutputStream(out);
-//        FileOutputStream fos = new FileOutputStream(out);
-//        File file = new File("D:\\Grafico.png");
-//        try {
-//            ImageIO.write(SwingFXUtils.fromFXImage(wim, null), "png", file);
-//        } catch (Exception s) {
-//        }
-
+//
+//        WritableImage wim = new WritableImage(700, 700);
+//        instance.stageTemp.getScene().snapshot(wim);
+//        File file = new File("D:\\ImageGrafico.png");
+//        ImageIO.write(SwingFXUtils.fromFXImage(wim, null), "png", file);
         Logger logger = Logger.getLogger("");
         logger.setLevel(Level.INFO);
         logger.info("--__-- $$ *Exportar Imagem* $$ -- __ --");
@@ -102,28 +127,252 @@ public class GerenciarController implements Initializable {
     @FXML
     public void OnMouseClicked() {
         tarefaD.clear();
+        tarefaC.clear();
+        tarefaP.clear();
+        tarefaPre.clear();
+        tarefaS.clear();
+//        subO.clear();
+//        subS.clear();
+//        listaT.getSelectionModel().select(-1);
         instance.tarefaTemporaria = (Tarefa) listaT.getSelectionModel().getSelectedItem();
-
+//        System.out.println(instance.tarefaTemporaria);
         if (instance.tarefaTemporaria != null) {
             ObservableList<Sub> obSubs = FXCollections.observableArrayList(instance.usuario.encontraTarefa(instance.tarefaTemporaria.getNome()).getSub());
-//        System.out.println(obSubs);
             listaS.setItems(obSubs);
-//        System.out.println(instance.tarefaTemporaria);
-            tarefaD.appendText(instance.tarefaTemporaria.ChamaAll());
-//        tarefaD.setPromptText(instance.tarefaTemporaria.ChamaAll());
-//                = TextField. instance.tarefaTemporaria.getDescricao();
-            subD.clear();
+            tarefaD.appendText(instance.tarefaTemporaria.getDescricao());
+            tarefaC.appendText(instance.tarefaTemporaria.getConclusao());
+            tarefaP.appendText(instance.tarefaTemporaria.getPrioridade());
+            tarefaPre.appendText(instance.tarefaTemporaria.getPrevisao());
+            tarefaS.appendText(instance.tarefaTemporaria.getSituacao());
+            subO.clear();
+            subS.clear();
+        } else {
+            tarefaD.clear();
+            tarefaC.clear();
+            tarefaP.clear();
+            tarefaPre.clear();
+            tarefaS.clear();
+//            subO.clear();
+//            subS.clear();
         }
+    }
 
+    @FXML
+    public void editarTarefaClicked(ActionEvent e) {
+        erro.setVisible(false);
+        if (instance.tarefaTemporaria != null) {
+//            tarefaC.setEditable(true);
+            tarefaD.setEditable(true);
+            tarefaP.setEditable(true);
+            tarefaPre.setEditable(true);
+            attT.setDisable(true);
+//        tarefaS.setEditable(true);
+        } else {
+            erro.setText("Selecione uma tarefa para ser aditada");
+            erro.setVisible(true);
+        }
+    }
+
+    @FXML
+    public void atualizarTarefaClicked(ActionEvent e) {
+        Tarefa aux = new Tarefa();
+        aux = instance.tarefaTemporaria;
+        aux.setConclusao(tarefaC.getText());
+        aux.setDescricao(tarefaD.getText());
+        aux.setPrevisao(tarefaPre.getText());
+        aux.setPrioridade(tarefaP.getText());
+        aux.setSituacao(tarefaS.getText());
+
+        GravarXML gravar = new GravarXML(instance.usuario.getNome(), instance.usuario);
+        obTarefas = FXCollections.observableArrayList(instance.usuario.getLista());
+        listaT.setItems(obTarefas);
+        listaT.getSelectionModel().select(-1);
+        erro.setText("Tarefa atualizada");
+        erro.setVisible(true);
+        tarefaD.clear();
+        tarefaC.clear();
+        tarefaP.clear();
+        tarefaPre.clear();
+        tarefaS.clear();
+        subO.clear();
+        subS.clear();
+//        instance.tarefaTemporaria = (Tarefa) tarefaD.getText();
+    }
+
+    @FXML
+    public void removerTarefaClicked(ActionEvent e) {
+        erro.setVisible(false);
+        if (instance.tarefaTemporaria != null) {
+            instance.usuario.rmTarefa(instance.tarefaTemporaria);
+            GravarXML gravar = new GravarXML(instance.usuario.getNome(), instance.usuario);
+            erro.setText("Tarefa removida");
+            erro.setVisible(true);
+            obTarefas = FXCollections.observableArrayList(instance.usuario.getLista());
+            listaT.setItems(obTarefas);
+        } else {
+            erro.setText("Selecione uma tarefa para ser removida");
+            erro.setVisible(true);
+        }
+    }
+
+    @FXML
+    public void adicionarTarefaClicked(ActionEvent e) {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(ToDoFx.class
+                    .getResource("Tarefa.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(GerenciarController.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+        Scene scene = new Scene(root);
+        instance.stageTemp.setScene(scene);
+        instance.stageTemp.centerOnScreen();
+        instance.stageTemp.show();
+    }
+
+    @FXML
+    public void finalizarTarefaClicked(ActionEvent e) {
+        instance.tarefaTemporaria = (Tarefa) listaT.getSelectionModel().getSelectedItem();
+        if (instance.tarefaTemporaria == null) {
+            erro.setText("Nenhuma Tarefa para finalizar");
+            erro.setVisible(true);
+        } else {
+            erro.setVisible(false);
+            instance.tarefaTemporaria.setSituacao("Finalizado");
+            instance.tarefaTemporaria.setConclusao(getDateTime().toString());
+            for (Sub s : instance.usuario.encontraTarefa(instance.tarefaTemporaria.getNome()).getSub()) {
+                s.setStatus("Finalizado");
+            }
+//                System.out.println(instance.tarefaTemporaria.getConclusao());
+            GravarXML gravar = new GravarXML(instance.usuario.getNome(), instance.usuario);
+            obTarefas = FXCollections.observableArrayList(instance.usuario.getLista());
+            listaT.setItems(obTarefas);
+            listaT.getSelectionModel().select(-1);
+            tarefaD.clear();
+            tarefaC.clear();
+            tarefaP.clear();
+            tarefaPre.clear();
+            tarefaS.clear();
+            subO.clear();
+            subS.clear();
+//        Sub aux = instance.usuario.encontraTarefa(instance.tarefaTemporaria.getNome()).encontraSub(instance.subTemporaria.getName());
+        }
     }
 
     @FXML
     public void OnSubMouseClicked() {
-        subD.clear();
+        subO.clear();
+        subS.clear();
         instance.subTemporaria = (Sub) listaS.getSelectionModel().getSelectedItem();
 //        System.out.println(instance.subTemporaria);
         if (instance.subTemporaria != null) {
-            subD.appendText(instance.tarefaTemporaria.encontraSub(instance.subTemporaria.getName()).ChamaObs());
+            subO.appendText(instance.tarefaTemporaria.encontraSub(instance.subTemporaria.getName()).ChamaObs());
+            subS.appendText(instance.tarefaTemporaria.encontraSub(instance.subTemporaria.getName()).ChamaStatus());
+        } else {
+            subO.clear();
+            subS.clear();
+        }
+    }
+
+    @FXML
+    public void atualizarSubClicked(ActionEvent e) {
+        Sub aux = instance.usuario.encontraTarefa(instance.tarefaTemporaria.getNome()).encontraSub(instance.subTemporaria.getName());
+        aux.setName(instance.subTemporaria.getName());
+//        System.out.println(aux.getName());
+        aux.setObs(subO.getText());
+//        System.out.println(aux.getObs());
+        aux.setStatus(subS.getText());
+//        System.out.println(aux.getStatus());
+
+//        instance.usuario.encontraTarefa(instance.tarefaTemporaria.getNome()).getSub().add(aux);
+//        System.out.println(instance.tarefaTemporaria.encontraSub(instance.subTemporaria.getName()));
+
+        GravarXML gravar = new GravarXML(instance.usuario.getNome(), instance.usuario);
+
+        ObservableList<Sub> obSubs = FXCollections.observableArrayList(instance.usuario.encontraTarefa(instance.tarefaTemporaria.getNome()).getSub());
+        listaS.setItems(obSubs);
+        listaS.getSelectionModel().select(-1);
+        listaT.getSelectionModel().select(-1);
+        erro.setText("SubTarefa atualizada");
+        erro.setVisible(true);
+        tarefaD.clear();
+        tarefaC.clear();
+        tarefaP.clear();
+        tarefaPre.clear();
+        tarefaS.clear();
+        subO.clear();
+        subS.clear();
+//        System.out.println(aux.getName());
+//        System.out.println(sub);
+//        System.out.println(aux.getStatus());
+    }
+
+    @FXML
+    public void editarSubClicked(ActionEvent e) {
+        erro.setVisible(false);
+        if (instance.subTemporaria != null) {
+            subO.setEditable(true);
+            attS.setDisable(true);
+//            subS.setEditable(true);
+        } else {
+            erro.setText("Selecione uma SubTarefa para ser aditada");
+            erro.setVisible(true);
+        }
+    }
+
+    @FXML
+    public void removerSubClicked(ActionEvent e) {
+        erro.setVisible(false);
+        if (instance.subTemporaria != null) {
+            instance.tarefaTemporaria.rmSub(instance.subTemporaria);
+            GravarXML gravar = new GravarXML(instance.usuario.getNome(), instance.usuario);
+            erro.setText("SubTarefa removida");
+            erro.setVisible(true);
+            ObservableList<Sub> obSubs = FXCollections.observableArrayList(instance.usuario.encontraTarefa(instance.tarefaTemporaria.getNome()).getSub());
+            listaS.setItems(obSubs);
+        } else {
+            erro.setText("Selecione uma SubTarefa para ser removida");
+            erro.setVisible(true);
+        }
+    }
+
+    @FXML
+    public void adicionarSubClicked(ActionEvent e) {
+        erro.setVisible(false);
+        if (instance.tarefaTemporaria.getSituacao().toUpperCase().equals("Finalizado".toUpperCase())) {
+            erro.setText("Tarefa está finalizada");
+            erro.setVisible(true);
+        } else {
+            Parent root = null;
+            try {
+                root = FXMLLoader.load(ToDoFx.class
+                        .getResource("Sub.fxml"));
+            } catch (IOException ex) {
+                Logger.getLogger(GerenciarController.class
+                        .getName()).log(Level.SEVERE, null, ex);
+            }
+            Scene scene = new Scene(root);
+            instance.stageTemp.setScene(scene);
+            instance.stageTemp.centerOnScreen();
+            instance.stageTemp.show();
+        }
+    }
+
+    @FXML
+    public void finalizarSubClicked(ActionEvent e) {
+
+        instance.subTemporaria = listaS.getSelectionModel().getSelectedItem();
+        if (instance.subTemporaria == null) {
+            erro.setText("Nenhuma SubTarefa para finalizar");
+            erro.setVisible(true);
+        } else {
+            instance.subTemporaria.setName(instance.subTemporaria.getName());
+            instance.subTemporaria.setObs(instance.subTemporaria.getObs());
+            instance.subTemporaria.setStatus("Finalizado");
+
+            GravarXML gravar = new GravarXML(instance.usuario.getNome(), instance.usuario);
+            erro.setVisible(false);
         }
     }
 
@@ -133,6 +382,7 @@ public class GerenciarController implements Initializable {
         return dateFormat.format(date);
     }
 
+    @FXML
     public void GerarGrafico(ActionEvent e) throws IOException {
         long conclusao = 0;
         long previsao = 0;
@@ -142,9 +392,10 @@ public class GerenciarController implements Initializable {
         int fechadoemdia = 0;
         int fechadoatrasado = 0;
         List<Tarefa> tarefa = instance.usuario.getLista();
-        System.out.println(tarefa);
+//        System.out.println(tarefa);
 
         if (tarefa.isEmpty()) {
+            erro.setText("Dados insuficientes para gerar o gráfico");
             erro.setVisible(true);
         } else {
             for (int x = 0; x < tarefa.size(); x++) {
@@ -179,12 +430,6 @@ public class GerenciarController implements Initializable {
 
             erro.setVisible(false);
 
-//        System.out.println(abertoatrasado);
-//        System.out.println(abertoemdia);
-//        System.out.println(fechadoemdia);
-//        System.out.println(fechadoatrasado);
-//        
-
             ObservableList<PieChart.Data> pieChartData =
                     FXCollections.observableArrayList(
                     new PieChart.Data("Aberto em dia", abertoemdia),
@@ -207,84 +452,20 @@ public class GerenciarController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-        erro.setVisible(false);
+        tarefaC.setEditable(false);
         tarefaD.setEditable(false);
-        subD.setEditable(false);
+        tarefaP.setEditable(false);
+        tarefaPre.setEditable(false);
+        tarefaS.setEditable(false);
+        erro.setVisible(false);
+        subO.setEditable(false);
+        subS.setEditable(false);
+        attT.setDisable(true);
+        attS.setDisable(true);
+
 //        System.out.println("" + instance.usuario.getLista());
-        ObservableList<Tarefa> obTarefas = FXCollections.observableArrayList(instance.usuario.getLista());
+        obTarefas = FXCollections.observableArrayList(instance.usuario.getLista());
+//        System.out.println(obTarefas);
         listaT.setItems(obTarefas);
-
-        MenuItem mt1 = new MenuItem("Finalizar Tarefa");
-        mt1.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent e) {
-                instance.tarefaTemporaria = (Tarefa) listaT.getSelectionModel().getSelectedItem();
-                instance.tarefaTemporaria.setSituacao("Finalizado");
-                instance.tarefaTemporaria.setConclusao(getDateTime().toString());
-//                System.out.println(instance.tarefaTemporaria.getConclusao());
-                GravarXML gravar = new GravarXML(instance.usuario.getNome(), instance.usuario);
-            }
-        });
-
-        MenuItem mt2 = new MenuItem("Adicionar Tarefa");
-        mt2.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent e) {
-                Parent root = null;
-
-
-                try {
-                    root = FXMLLoader.load(ToDoFx.class
-                            .getResource("Tarefa.fxml"));
-                } catch (IOException ex) {
-                    Logger.getLogger(GerenciarController.class
-                            .getName()).log(Level.SEVERE, null, ex);
-                }
-                Scene scene = new Scene(root);
-                instance.stageTemp.setScene(scene);
-                instance.stageTemp.centerOnScreen();
-                instance.stageTemp.show();
-            }
-        });
-        menu.getItems().addAll(mt1, mt2);
-        listaT.setContextMenu(menu);
-
-        MenuItem mt3 = new MenuItem("Finalizar Sub");
-        mt3.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent e) {
-                instance.subTemporaria = listaS.getSelectionModel().getSelectedItem();
-                instance.subTemporaria.setName(instance.subTemporaria.getName());
-                instance.subTemporaria.setObs(instance.subTemporaria.getObs());
-                instance.subTemporaria.setStatus("Finalizado");
-
-                GravarXML gravar = new GravarXML(instance.usuario.getNome(), instance.usuario);
-
-            }
-        });
-
-        MenuItem mt4 = new MenuItem("Adicionar Sub");
-        mt4.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent e) {
-                Parent root = null;
-
-
-                try {
-                    root = FXMLLoader.load(ToDoFx.class
-                            .getResource("Sub.fxml"));
-                } catch (IOException ex) {
-                    Logger.getLogger(GerenciarController.class
-                            .getName()).log(Level.SEVERE, null, ex);
-                }
-                Scene scene = new Scene(root);
-                instance.stageTemp.setScene(scene);
-                instance.stageTemp.centerOnScreen();
-                instance.stageTemp.show();
-            }
-        });
-        sub.getItems().addAll(mt3, mt4);
-        listaS.setContextMenu(sub);
     }
 }

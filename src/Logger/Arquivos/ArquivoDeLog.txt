@@ -1,0 +1,72 @@
+Set 10, 2013 7:26:44 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:26:45 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Exportar Imagem* $$ -- __ --
+Set 10, 2013 7:26:45 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Exportar Imagem* $$ -- __ --
+Set 10, 2013 7:27:02 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:02 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:02 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:03 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:03 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:03 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:03 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:04 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:04 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:04 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:04 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:04 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:05 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:05 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:05 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:05 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:05 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:05 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:09 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:09 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:09 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:09 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:09 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:09 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:09 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:10 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:10 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:10 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:10 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:10 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:10 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:10 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
+Set 10, 2013 7:27:10 PM java.util.logging.LogManager$RootLogger log
+INFO: --__-- $$ *Gerar Gráfico* $$ -- __ --
