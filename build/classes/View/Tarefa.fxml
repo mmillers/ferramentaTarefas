@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="276.0" prefWidth="263.0" xmlns:fx="http://javafx.com/fxml" fx:controller="Controller.TaskController">
+  <children>
+    <Label layoutX="19.0" layoutY="57.0" text="Descrição" />
+    <Label layoutX="16.0" layoutY="132.0" text="Prioridade" />
+    <TextArea fx:id="tarefa" layoutX="82.0" layoutY="57.0" prefHeight="59.0" prefWidth="164.0" wrapText="true" />
+    <Button fx:id="cadastrarT" layoutX="26.0" layoutY="215.0" mnemonicParsing="false" onAction="#cadastrarTclick" text="Adicionar" />
+    <Label layoutX="10.0" layoutY="169.0" text="Realizar até" />
+    <TextField fx:id="previsao" layoutX="82.0" layoutY="171.0" prefWidth="164.0" />
+    <Label layoutX="38.0" layoutY="24.0" text="Nome" />
+    <TextField fx:id="nomeT" layoutX="82.0" layoutY="24.0" prefWidth="164.0" />
+    <ComboBox fx:id="prioridade" layoutX="82.0" layoutY="133.0" prefHeight="21.0" prefWidth="164.0" />
+    <Button layoutX="145.0" layoutY="214.0" mnemonicParsing="false" onAction="#voltarclick" prefHeight="22.0" prefWidth="71.0" text="Voltar" />
+    <Label fx:id="cad"  contentDisplay="CENTER" graphicTextGap="5.0" layoutX="62.0" layoutY="250.0" prefWidth="133.0" text="Dados Cadastrados" textFill="#0029ff">
+      <effect>
+        <Reflection fraction="0.5119047619047619" topOpacity="0.38095238095238093" />
+      </effect>
+      <font>
+        <Font name="Lucida Console" size="12.0" />
+      </font>
+    </Label>
+  </children>
+</AnchorPane>

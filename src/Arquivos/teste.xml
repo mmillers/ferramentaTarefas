@@ -1,0 +1,9 @@
+  <Usuario nome="teste" senha="teste">
+    <lista>
+      <Tarefa descricao="tst1" nome="teste1" previsao="10/10/2013" prioridade="Baixa" situacao="aberto">
+        <sub>
+          <sub name="asd1" obs="asd1" status="aberto"/>
+        </sub>
+      </Tarefa>
+    </lista>
+  </Usuario>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE digester-rules PUBLIC "-//Apache Commons //DTD digester-rules XML V1.0//EN" "http://commons.apache.org/digester/dtds/digester-rules-3.0.dtd">
+
+<digester-rules>
+    <pattern value="Usuario">
+        <object-create-rule classname="Model.Usuario" />
+        <pattern value="lista/Tarefa">
+            <object-create-rule classname="Model.Tarefa" />            
+            <pattern value="sub/sub">
+                <object-create-rule classname="Model.Sub" />
+                <set-properties-rule />
+                <set-next-rule methodname="addSub" paramtype="Model.Sub" />
+            </pattern>
+            <set-properties-rule />
+            <set-next-rule methodname="addTarefa" paramtype="Model.Tarefa" />
+        </pattern>
+        <set-properties-rule />
+        <set-next-rule methodname="add" paramtype="Model.Usuario" />
+    </pattern>
+</digester-rules>

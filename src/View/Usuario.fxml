@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="196.0" prefWidth="241.0" xmlns:fx="http://javafx.com/fxml" fx:controller="Controller.UserController">
+  <children>
+    <Button fx:id="cadastrar" layoutX="34.0" layoutY="122.0" mnemonicParsing="false" onAction="#cadastrarclick" text="Cadastrar" />
+    <Button fx:id="cancelar" layoutX="132.0" layoutY="122.0" mnemonicParsing="false" onAction="#cancelarclick" text="Cancelar" />
+    <Label layoutX="20.0" layoutY="29.0" text="Login" />
+    <Label layoutX="20.0" layoutY="79.0" text="Senha" />
+    <PasswordField fx:id="senha" layoutX="61.0" layoutY="73.0" prefWidth="161.0" />
+    <TextField fx:id="nome" layoutX="61.0" layoutY="27.0" prefWidth="161.0" />
+    <Label fx:id="ca"  contentDisplay="CENTER" graphicTextGap="5.0" layoutX="53.0" layoutY="158.0" prefWidth="133.0" text="Dados Cadastrados" textFill="#1400ff">
+      <effect>
+        <Reflection fraction="0.5119047619047619" topOpacity="0.38095238095238093" />
+      </effect>
+      <font>
+        <Font name="Lucida Console" size="12.0" />
+      </font>
+    </Label>
+  </children>
+</AnchorPane>

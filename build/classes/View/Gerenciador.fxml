@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="686.0" prefWidth="721.0" xmlns:fx="http://javafx.com/fxml" fx:controller="Controller.GerenciarController">
+  <children>
+    <Label layoutX="107.0" layoutY="22.0" text="TAREFAS" />
+    <Label layoutX="305.0" layoutY="22.0" text="SUB TAREFAS" />
+    <ListView fx:id="listaT" layoutX="31.0" layoutY="45.0" onMouseClicked="#OnMouseClicked" prefHeight="267.0" prefWidth="200.0" />
+    <ListView fx:id="listaS" layoutX="241.0" layoutY="45.0" onMouseClicked="#OnSubMouseClicked" prefHeight="267.0" prefWidth="200.0" />
+    <PieChart id="PieChart" fx:id="grafico" layoutX="146.0" layoutY="354.0" prefHeight="324.0" prefWidth="491.0" />
+    <Button fx:id="exportar" layoutX="31.0" layoutY="333.0" mnemonicParsing="false" onAction="#exportarclick" prefWidth="73.0" text="Imagem" />
+    <TextArea fx:id="subD" layoutX="483.0" layoutY="190.0" prefHeight="122.0" prefWidth="200.0" wrapText="true" />
+    <TextArea fx:id="tarefaD" layoutX="483.0" layoutY="45.0" prefHeight="122.0" prefWidth="200.0" wrapText="true" />
+    <Button fx:id="gerar" layoutX="127.0" layoutY="333.0" mnemonicParsing="false" onAction="#GerarGrafico" prefWidth="73.0" text="Gráfico" />
+    <Label fx:id="erro"  layoutX="241.0" layoutY="335.0" prefWidth="332.0" text="Impossível gerar grágfico, dados insuficientes..." textFill="#660049" wrapText="true">
+      <font>
+        <Font name="SimHei" size="12.0" />
+      </font>
+    </Label>
+  </children>
+</AnchorPane>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="181.0" prefWidth="231.0" xmlns:fx="http://javafx.com/fxml" fx:controller="Controller.LoginController">
+  <children>
+    <Label layoutX="23.0" layoutY="24.0" text="Login" />
+    <Label layoutX="23.0" layoutY="79.0" text="Senha" />
+    <TextField id="" fx:id="loginNome" layoutX="63.0" layoutY="24.0" prefWidth="144.0" />
+    <Button fx:id="entrar" layoutX="44.0" layoutY="117.0" mnemonicParsing="false" onAction="#entrarclick" text="Entrar" />
+    <Button fx:id="novo" layoutX="122.0" layoutY="117.0" mnemonicParsing="false" onAction="#novoclick" text="Novo" />
+    <PasswordField fx:id="loginSenha" layoutX="63.0" layoutY="73.0" prefWidth="144.0" />
+    <Label fx:id="erro"  contentDisplay="CENTER" graphicTextGap="5.0" layoutX="56.0" layoutY="151.0" prefWidth="133.0" text="Dados Incorretos" textFill="#0029ff">
+      <effect>
+        <Reflection fraction="0.5119047619047619" topOpacity="0.38095238095238093" />
+      </effect>
+      <font>
+        <Font name="Lucida Console" size="12.0" />
+      </font>
+    </Label>
+  </children>
+</AnchorPane>

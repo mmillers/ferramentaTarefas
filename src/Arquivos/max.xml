@@ -1,0 +1,16 @@
+  <Usuario nome="max" senha="max">
+    <lista>
+      <Tarefa conclusao="09/09/2013" descricao="d1" nome="a1" previsao="12/08/2013" prioridade="Alta" situacao="Finalizado">
+        <sub/>
+      </Tarefa>
+      <Tarefa conclusao="desconhecida" descricao="db1" nome="b1" previsao="12/09/2013" prioridade="Media" situacao="aberto">
+        <sub/>
+      </Tarefa>
+      <Tarefa conclusao="desconhecida" descricao="asd" nome="asd" previsao="07/12/2013" prioridade="Media" situacao="aberto">
+        <sub/>
+      </Tarefa>
+      <Tarefa conclusao="desconhecida" descricao="qwert1213" nome="qwert" previsao="05/10/2014" prioridade="Media" situacao="aberto">
+        <sub/>
+      </Tarefa>
+    </lista>
+  </Usuario>
